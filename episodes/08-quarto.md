@@ -179,4 +179,93 @@ top of the Source pane (top left), or use the keyboard shortcut
 document yet, you will be prompted to do so when you **Render** for the first
 time.
 
+![](fig/rmd-rmd_to_html.png){alt="The 'knitting' process: First, R Markdown is converted to Markdown, which is then converted (via pandoc) to .html, .pdf, .docx, etc."}
+
+## Writing an R Markdown report
+
+Now we will add some R code from our previous data wrangling and visualisation,
+which means we need to make sure **tidyverse** is loaded. It is not enough to
+load **tidyverse** from the console, we will need to load it within our Quarto
+document. The same applies to our data. To load these, we will need to create a
+'code chunk' at the top of our document (below the YAML header).
+
+A code chunk can be inserted by clicking Code > Insert Chunk, or by using the
+keyboard shortcuts <kbd>Ctrl</kbd>\+<kbd>Alt</kbd>\+<kbd>I</kbd> on Windows and Linux,
+and <kbd>Cmd</kbd>\+<kbd>Option</kbd>\+<kbd>I</kbd> on Mac.
+
+The syntax of a code chunk is:
+
+::: {.cell}
+
+````{.cell-code}
+```{{r}}
+#| label: chunk-name
+
+# Here is where you place the R code that you want to run.
+```
+````
+:::
+
+An R Markdown document knows that this text is not part of the report from the
+```` ``` ```` that begins and ends the chunk. It also knows that the code
+inside of the chunk is R code from the `r` inside of the curly braces (`{}`).
+Below the curly braces, you can add code chunk options after the `#|` sign. In this way, you can for example add label for the code chunk. Naming a chunk is optional, but recommended. Each chunk label must be unique, and only contain alphanumeric characters and `-`.
+
+::: {.cell}
+::: {.cell-output .cell-output-stderr}
+```
+Warning: package 'tidyverse' was built under R version 4.2.1
+```
+:::
+
+::: {.cell-output .cell-output-stderr}
+```
+Warning: package 'ggplot2' was built under R version 4.2.3
+```
+:::
+
+::: {.cell-output .cell-output-stderr}
+```
+Warning: package 'tibble' was built under R version 4.2.3
+```
+:::
+
+::: {.cell-output .cell-output-stderr}
+```
+Warning: package 'dplyr' was built under R version 4.2.3
+```
+:::
+
+::: {.cell-output .cell-output-stderr}
+```
+Warning: package 'stringr' was built under R version 4.2.2
+```
+:::
+:::
+
+To load **tidyverse** and our `SAFI_clean.csv` file, we will insert a chunk and
+call it 'setup'. Since we don't want this code or the output to show in our
+knitted HTML document, we add an `#| include: false` option after the curly braces.
+
+```{{r}}
+#|label: setup
+#|include: false
+
+library(tidyverse)
+library(here)
+interviews <- read_csv(here("data/SAFI_clean.csv"), na = "NULL")
+```
+
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Important Note!
+
+The file paths you give in a .qmd document, e.g. to load a .csv file, are
+relative to the .qmd document, **not** the project root.
+
+As suggested in the Starting with Data episode, we highly recommend the use of
+the `here()` function to keep the file paths consistent within your project.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
