@@ -170,7 +170,7 @@ And nested items by tab-indenting:
   + Number of rooms in house
 ```
 
-For more Markdown syntax see [the following reference guide](https://www.markdownguide.org/basic-syntax).
+For more Markdown syntax see [the following reference guide](https://quarto.org/docs/authoring/markdown-basics.html).
 
 Now we can render the document into HTML by clicking the **Render** button in the
 top of the Source pane (top left), or use the keyboard shortcut
@@ -179,4 +179,4 @@ top of the Source pane (top left), or use the keyboard shortcut
 document yet, you will be prompted to do so when you **Render** for the first
 time.
 
-![](fig/rmd-rmd_to_html.png){alt="The 'knitting' process: First, R Markdown is converted to Markdown, which is then converted (via pandoc) to .html, .pdf, .docx, etc."}
+
