@@ -82,7 +82,7 @@ independent.
 Some platforms provide a real time preview of the formatting, like RStudio's
 visual markdown editor (available from version 1.4).
 
-First, let's create a heading! A `#` in front of text indicates to Markdown that
+First, let's create a heading! A hashtag (`#`) in front of text indicates to Markdown that
 this text is a heading. Adding more `#`s make the heading smaller, i.e. one `#` is
 a first level heading, two `##`s is a second level heading, etc. up to the 6th level heading.
 
