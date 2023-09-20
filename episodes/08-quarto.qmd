@@ -66,7 +66,7 @@ header by adding the line `format: html`. You can also adapt the `format` of
 the file, to `pdf` or `docx`. We will start with an HTML document and discuss the other
 options later.
 
-You can add some additional information about your document in the YAML header such as `title`, `date` and `author`. This information will be displayed at the top of your document.  There are many more fields that can be added to the YAML header that provide additional information about the document or define the behaviour of the file. But we won't discuss them now. 
+You can add more information about your document in the YAML header such as `title`, `date` and `author`. This information will be displayed at the top of your document.  There are many more fields that can be added to the YAML header that provide additional information about the document or define the behaviour of the file. But we won't discuss them now. 
 
 After the header, to begin the body of the document, you start typing after the end of the YAML
 header (i.e. after the second `---`).
