@@ -183,7 +183,7 @@ time.
 
 ![](fig/rstudio-qmd-how-it-works.png){alt="The 'knitting' process: First, Quarto file is converted to Markdown, which is then converted (via pandoc) to .html, .pdf, .docx, etc."}
 
-## Writing an R Markdown report
+## Writing a Quarto report
 
 Now we will add some R code from our previous data wrangling and visualisation,
 which means we need to make sure **tidyverse** is loaded. It is not enough to
