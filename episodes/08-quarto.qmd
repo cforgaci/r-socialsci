@@ -207,7 +207,7 @@ The syntax of a code chunk is:
 An R Markdown document knows that this text is not part of the report from the
 ```` ``` ```` that begins and ends the chunk. It also knows that the code
 inside of the chunk is R code from the `r` inside of the curly braces (`{}`).
-Below the curly braces, you can add code chunk options after the `#|` sign. In this way, you can for example add label for the code chunk. Naming a chunk is optional, but recommended. Each chunk label must be unique, and only contain alphanumeric characters and `-`.
+Below the curly braces, you can add code chunk options after the `#|` sign. In this way, you can for example add a label for the code chunk. Naming a chunk is optional, but recommended. Each chunk label must be unique, and only contain alphanumeric characters and `-`.
 
 ```{r}
 #| echo: false
