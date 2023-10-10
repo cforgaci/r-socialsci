@@ -117,6 +117,6 @@ can be done by using `citation("package")`.
 
 ::: keypoints
 -   R Markdown is a useful language for creating reproducible documents
-    combining text and executable R-code.
+    combining text and executable R code.
 -   Specify chunk options to control formatting of the output document
 :::
