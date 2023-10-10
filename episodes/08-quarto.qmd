@@ -112,7 +112,8 @@ can be done by using `citation("package")`.
 
 -   [Markdown tutorial](https://commonmark.org/help/tutorial/)
 -   [Official Quarto website](https://quarto.org/) (comprehensive resource of tutorials and documentation)
--   [Welcome to Quarto](https://www.youtube.com/watch?v=yvi5uXQMvu4&ab_channel=PositPBC) - workshop by Posit (former RStudio)
+-   [Welcome to Quarto](https://www.youtube.com/watch?v=yvi5uXQMvu4&ab_channel=PositPBC) - workshop by the Posit (former RStudio) team
+-   [R for Data Science Chapters 29 and 30](https://r4ds.hadley.nz/communicate) - book by the Posit (former RStudio) team
 -   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) - book by the RStudio team on R Markdown, the predecessor of Quarto
 
 ::: keypoints
