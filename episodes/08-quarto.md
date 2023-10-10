@@ -112,24 +112,11 @@ can be done by using `citation("package")`.
 
 ## Resources
 
--   [Knitr in a knutshell tutorial](https://kbroman.org/knitr_knutshell)
--   [Dynamic Documents with R and
-    knitr](https://www.amazon.com/exec/obidos/ASIN/1482203537/7210-20)
-    (book)
--   [R Markdown documentation](https://rmarkdown.rstudio.com)
--   [R Markdown cheat
-    sheet](https://github.com/rstudio/cheatsheets/blob/master/rmarkdown-2.0.pdf)
--   [Getting started with R
-    Markdown](https://www.rstudio.com/resources/webinars/getting-started-with-r-markdown/)
 -   [Markdown tutorial](https://commonmark.org/help/tutorial/)
--   [R Markdown: The Definitive
-    Guide](https://bookdown.org/yihui/rmarkdown/) (book by Rstudio team)
--   [Reproducible
-    Reporting](https://www.rstudio.com/resources/webinars/reproducible-reporting/)
--   [The Ecosystem of R
-    Markdown](https://www.rstudio.com/resources/webinars/the-ecosystem-of-r-markdown/)
--   [Introducing
-    Bookdown](https://www.rstudio.com/resources/webinars/introducing-bookdown/)
+-   [Official Quarto website](https://quarto.org/) (comprehensive resource of tutorials and documentation)
+-   [Welcome to Quarto](https://www.youtube.com/watch?v=yvi5uXQMvu4&ab_channel=PositPBC) - workshop by the Posit (former RStudio) team
+-   [R for Data Science Chapters 29 and 30](https://r4ds.hadley.nz/communicate) - book by the Posit (former RStudio) team
+-   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) - book by the RStudio team on R Markdown, the predecessor of Quarto
 
 ::: keypoints
 -   R Markdown is a useful language for creating reproducible documents
