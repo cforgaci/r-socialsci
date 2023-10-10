@@ -116,7 +116,7 @@ can be done by using `citation("package")`.
 -   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) - book by the RStudio team on R Markdown, the predecessor of Quarto
 
 ::: keypoints
--   R Markdown is a useful language for creating reproducible documents
+-  Quarto is a useful language for creating reproducible documents
     combining text and executable R code.
 -   Specify chunk options to control formatting of the output document
 :::
