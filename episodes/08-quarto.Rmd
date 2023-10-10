@@ -51,13 +51,11 @@ is necessary.
 
 <figure>
 
-```{r rmarkdown-wizards, echo = FALSE, fig.show = "hold", fig.alt = "R Markdown wizard monsters creating a R Markdown document from a recipe. Art by Allison Horst", out.width="100%"}
-knitr::include_graphics("fig/rmarkdown_wizards.png")
+```{r rmarkdown-wizards, echo = FALSE, fig.show = "hold", fig.alt = "A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, HTML, Word documents, and more) versatility of Quarto.", out.width="100%"}
+knitr::include_graphics("fig/quarto-illustration.png")
 ```
 
-<figcaption>Image credit:
-<a href="https://github.com/allisonhorst/stats-illustrations">Allison
-Horst</a></figcaption>
+<figcaption>A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, HTML, Word documents, and more) versatility of Quarto. Image source: [Posit](https://rstudio.github.io/cheatsheets/html/quarto.html)</figcaption>
 
 </figure>
 
@@ -96,13 +94,15 @@ It is possible to insert citations into a Quarto file using the editor
 toolbar. The editor toolbar includes commonly seen formatting buttons
 generally seen in text editors (e.g., bold and italic buttons). The
 toolbar is accessible by using the settings dropdown menu (next to the
-'Knit' dropdown menu) to select 'Use Visual Editor', also accessible
+'Render' dropdown menu) to select 'Use Visual Editor', also accessible
 through the shortcut 'Crtl+Shift+F4'. From here, clicking 'Insert'
 allows 'Citation' to be selected (shortcut: 'Crtl+Shift+F8'). For
 example, searching '10.1007/978-3-319-24277-4' in 'From DOI' and
 inserting will provide the citation for `ggplot2` [@wickham2016]. This
 will also save the citation(s) in 'references.bib' in the current
-working directory. Visit the [R Studio
+working directory. 
+
+Visit the [R Studio
 website](https://rstudio.github.io/visual-markdown-editing/) for more
 information. Tip: obtaining citation information from relevant packages
 can be done by using `citation("package")`.
