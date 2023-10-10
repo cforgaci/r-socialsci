@@ -12,9 +12,11 @@ editor:
     wrap: 72
 ---
 
-
-
-
+```{r}
+#| label: setup
+#| include: false
+source("data/download_data.R")
+```
 
 ::: objectives
 -   Create a .qmd document containing R code, text, and plots
@@ -49,13 +51,9 @@ is necessary.
 
 <figure>
 
-
-::: {.cell}
-::: {.cell-output-display}
-![](fig/quarto-illustration.png){fig-alt='A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, HTML, Word documents, and more) versatility of Quarto.' width=100%}
-:::
-:::
-
+```{r rmarkdown-wizards, echo = FALSE, fig.show = "hold", fig.alt = "A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, HTML, Word documents, and more) versatility of Quarto.", out.width="100%"}
+knitr::include_graphics("fig/quarto-illustration.png")
+```
 
 <figcaption>A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, HTML, Word documents, and more) versatility of Quarto. Image source: [Posit](https://rstudio.github.io/cheatsheets/html/quarto.html)</figcaption>
 
@@ -118,7 +116,7 @@ can be done by using `citation("package")`.
 -   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) - book by the RStudio team on R Markdown, the predecessor of Quarto
 
 ::: keypoints
--  Quarto is a useful language for creating reproducible documents
+-  Quarto is useful for creating reproducible documents
     combining text and executable R code.
 -   Specify chunk options to control formatting of the output document
 :::
