@@ -2,7 +2,6 @@
 episodes/*html
 site/*
 !site/README.md
-
 # History files
 .Rhistory
 .Rapp.history
@@ -53,3 +52,4 @@ vendor/
 .docker-vendor/
 Gemfile.lock
 .*history
+*.Rproj

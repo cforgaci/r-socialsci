@@ -7,265 +7,118 @@ format:
     df-print: paged
     keep-md: true
 source: md
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 
 
 
 
-::::::::::::::::::::::::::::::::::::::: objectives
+::: objectives
+-   Create a .qmd document containing R code, text, and plots
+-   Create a YAML header to control output
+-   Understand basic syntax of Quarto and Markdown
+-   Customise code chunks to control formatting
+-   Use code chunks and in-line code to create dynamic, reproducible
+    documents
+:::
 
-- Create a .qmd document containing R code, text, and plots
-- Create a YAML header to control output
-- Understand basic syntax of Quarto and Markdown
-- Customise code chunks to control formatting
-- Use code chunks and in-line code to create dynamic, reproducible documents
+::: questions
+-   What is Quarto?
+-   How can I integrate my R code with text and plots?
+-   How can I convert .qmd files to .html?
+:::
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+## Quarto
 
-:::::::::::::::::::::::::::::::::::::::: questions
+Quarto is a flexible type of document that allows you to seamlessly
+combine executable R code, and its output, with text in a single
+document. These documents can be readily converted to multiple static
+and dynamic output formats, including PDF (.pdf), Word (.docx), and HTML
+(.html).
 
-- What is Quarto?
-- How can I integrate my R code with text and plots?
-- How can I convert .qmd files to .html?
+The benefit of a well-prepared Quarto document is full reproducibility.
+This also means that, if you notice a data transcription error, or you
+are able to add more data to your analysis, you will be able to
+recompile the report without making any changes in the actual document.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+Quarto comes pre-installed with RStudio (as of v2022.07), so no action
+is necessary.
 
-## Creating a Quarto file
+<figure>
 
-To create a new Quarto document in RStudio, click File -> New File ->
-Quarto Document:
 
-![](fig/quarto-new.png){alt="Screenshot of the New Quarto file dialogue box in RStudio"}
+::: {.cell}
+::: {.cell-output-display}
+![](fig/quarto-illustration.png){fig-alt='A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, HTML, Word documents, and more) versatility of Quarto.' width=100%}
+:::
+:::
 
-Then click on 'Create Empty Document'. Normally you could enter the title of
-your document, your name (Author), and select the type of output, but we will be
-learning how to start from a blank document.
 
-## Basic components of Quarto
+<figcaption>A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, HTML, Word documents, and more) versatility of Quarto. Image source: [Posit](https://rstudio.github.io/cheatsheets/html/quarto.html)</figcaption>
 
-To control the output, a YAML (YAML Ain't Markup Language) header is needed:
+</figure>
 
-```
+## Other output options
+
+You can convert Quarto to a PDF or a Word document (among others). Put
+`pdf` or `word` in the initial header of the file to indicate the
+desired output format.
+
+```         
 ---
 title: "My Awesome Report"
 author: "Emmet Brickowski"
 date: ""
-format: html
+output: word
 ---
 ```
 
-The header is defined by the three hyphens at the beginning (`---`) and the
-three hyphens at the end (`---`).
+::: callout
+## Note: Creating PDF documents
 
-Although not recommended, you can leave the YAML out. Then the output will be 
-by default a HTML file. It's still better to include the file format in the YAML 
-header by adding the line `format: html`. You can also adapt the `format` of
-the file, to `pdf` or `docx`. We will start with an HTML document and discuss the other
-options later.
-
-You can add some additional information about your document in the YAML header such as `title`, `date` and `author`. This information will be displayed at the top of your document.  There are many more fields that can be added to the YAML header that provide additional information about the document or define the behaviour of the file. We won't discuss them now, but you can look for them in the [Quarto documentation](https://quarto.org/docs/reference/formats/html.html)
-
-After the header, to begin the body of the document, you start typing after the end of the YAML
-header (i.e. after the second `---`).
-
-## Markdown syntax
-
-Markdown is a popular markup language that allows you to add formatting elements
-to text, such as **bold**, *italics*, and `code`. The formatting will not be
-immediately visible in a markdown (.md) document, like you would see in a Word
-document. Rather, you add Markdown syntax to the text, which can then be
-converted to various other files that can translate the Markdown syntax.
-Markdown is useful because it is lightweight, flexible, and platform
-independent.
-
-Some platforms provide a real time preview of the formatting, like RStudio's
-visual markdown editor (available from version 1.4).
-
-First, let's create a heading! A hashtag (`#`) in front of text indicates to Markdown that
-this text is a heading. Adding more `#`s make the heading smaller, i.e. one `#` is
-a first level heading, two `##`s is a second level heading, etc. up to the 6th level heading.
-
-```
-# Title
-## Section
-### Sub-section
-#### Sub-sub section
-##### Sub-sub-sub section
-###### Sub-sub-sub-sub section
-```
-
-(only use a level if the one above is also in use)
-
-Since we have already defined our title in the YAML header, we will use a
-section heading to create an Introduction section.
-
-
-```
-## Introduction
-```
-
-You can make things **bold** by surrounding the word with double asterisks,
-`**bold**`, or double underscores, `__bold__`; and *italicize* using single
-asterisks, `*italics*`, or single underscores, `_italics_`.
-
-You can also combine **bold** and *italics* to write something ***really***
-important with triple-asterisks, `***really***`, or underscores, `___really___`;
-and, if you're feeling bold (pun intended), you can also use a combination of
-asterisks and underscores, `**_really_**`, `**_really_**`.
-
-To create `code-type` font, surround the word with backticks,
-``` `code type` ```.
-
-Now that we've learned a couple of things, it might be useful to implement them:
-
-```
-## Introduction
-
-This report uses the **tidyverse** package along with the *SAFI* dataset, 
-which has columns that include:
-```
-
-Then we can create a list for the variables using `-`, `+`, or `*` keys.
-
-```
-## Introduction
-
-This report uses the **tidyverse** package along with the *SAFI* dataset, 
-which has columns that include:
-
-- village
-- interview_date
-- no_members
-- years_liv
-- respondent_wall_type
-- rooms
-```
-
-You can also create an ordered list using numbers:
-
-```
-1. village
-2. interview_date
-3. no_members
-4. years_liv
-5. respondent_wall_type
-6. rooms
-```
-
-And nested items by tab-indenting:
-
-```
-- village
-  + Name of village
-- interview_date
-  + Date of interview
-- no_members
-  + How many family members lived in a house
-- years_liv
-  + How many years respondent has lived in village or neighbouring village
-- respondent_wall_type
-  + Type of wall of house
-- rooms
-  + Number of rooms in house
-```
-
-For more Markdown syntax see [the following reference guide](https://quarto.org/docs/authoring/markdown-basics.html).
-
-Now we can render the document into HTML by clicking the **Render** button in the
-top of the Source pane (top left), or use the keyboard shortcut
-<kbd>Ctrl</kbd>\+<kbd>Shift</kbd>\+<kbd>K</kbd> on Windows and Linux, and
-<kbd>Cmd</kbd>\+<kbd>Shift</kbd>\+<kbd>K</kbd> on Mac. If you haven't saved the
-document yet, you will be prompted to do so when you **Render** for the first
-time.
-
-![](fig/rmd-rmd_to_html.png){alt="The 'knitting' process: First, R Markdown is converted to Markdown, which is then converted (via pandoc) to .html, .pdf, .docx, etc."}
-
-## Writing an R Markdown report
-
-Now we will add some R code from our previous data wrangling and visualisation,
-which means we need to make sure **tidyverse** is loaded. It is not enough to
-load **tidyverse** from the console, we will need to load it within our Quarto
-document. The same applies to our data. To load these, we will need to create a
-'code chunk' at the top of our document (below the YAML header).
-
-A code chunk can be inserted by clicking Code > Insert Chunk, or by using the
-keyboard shortcuts <kbd>Ctrl</kbd>\+<kbd>Alt</kbd>\+<kbd>I</kbd> on Windows and Linux,
-and <kbd>Cmd</kbd>\+<kbd>Option</kbd>\+<kbd>I</kbd> on Mac.
-
-The syntax of a code chunk is:
-
-::: {.cell}
-
-````{.cell-code}
-```{{r}}
-#| label: chunk-name
-
-# Here is where you place the R code that you want to run.
-```
-````
+Creating .pdf documents may require installation of some extra software.
+The R package `tinytex` provides some tools to help make this process
+easier for R users. With `tinytex` installed, run
+`tinytex::install_tinytex()` to install the required software (you'll
+only need to do this once) and then when you render to pdf `tinytex`
+will automatically detect and install any additional LaTeX packages that
+are needed to produce the pdf document. Visit the [tinytex
+website](https://yihui.org/tinytex/) for more information.
 :::
 
-An R Markdown document knows that this text is not part of the report from the
-```` ``` ```` that begins and ends the chunk. It also knows that the code
-inside of the chunk is R code from the `r` inside of the curly braces (`{}`).
-Below the curly braces, you can add code chunk options after the `#|` sign. In this way, you can for example add label for the code chunk. Naming a chunk is optional, but recommended. Each chunk label must be unique, and only contain alphanumeric characters and `-`.
+::: callout
+## Note: Inserting citations into a Quarto file
 
-::: {.cell}
-::: {.cell-output .cell-output-stderr}
-```
-Warning: package 'tidyverse' was built under R version 4.2.1
-```
+It is possible to insert citations into a Quarto file using the editor
+toolbar. The editor toolbar includes commonly seen formatting buttons
+generally seen in text editors (e.g., bold and italic buttons). The
+toolbar is accessible by using the settings dropdown menu (next to the
+'Render' dropdown menu) to select 'Use Visual Editor', also accessible
+through the shortcut 'Crtl+Shift+F4'. From here, clicking 'Insert'
+allows 'Citation' to be selected (shortcut: 'Crtl+Shift+F8'). For
+example, searching '10.1007/978-3-319-24277-4' in 'From DOI' and
+inserting will provide the citation for `ggplot2` [@wickham2016]. This
+will also save the citation(s) in 'references.bib' in the current
+working directory. 
+
+Visit the [R Studio
+website](https://rstudio.github.io/visual-markdown-editing/) for more
+information. Tip: obtaining citation information from relevant packages
+can be done by using `citation("package")`.
 :::
 
-::: {.cell-output .cell-output-stderr}
-```
-Warning: package 'ggplot2' was built under R version 4.2.3
-```
+## Resources
+
+-   [Markdown tutorial](https://commonmark.org/help/tutorial/)
+-   [Official Quarto website](https://quarto.org/) (comprehensive resource of tutorials and documentation)
+-   [Welcome to Quarto](https://www.youtube.com/watch?v=yvi5uXQMvu4&ab_channel=PositPBC) - workshop by Posit (former RStudio)
+-   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) - book by the RStudio team on R Markdown, the predecessor of Quarto
+
+::: keypoints
+-  Quarto is a useful language for creating reproducible documents
+    combining text and executable R code.
+-   Specify chunk options to control formatting of the output document
 :::
-
-::: {.cell-output .cell-output-stderr}
-```
-Warning: package 'tibble' was built under R version 4.2.3
-```
-:::
-
-::: {.cell-output .cell-output-stderr}
-```
-Warning: package 'dplyr' was built under R version 4.2.3
-```
-:::
-
-::: {.cell-output .cell-output-stderr}
-```
-Warning: package 'stringr' was built under R version 4.2.2
-```
-:::
-:::
-
-To load **tidyverse** and our `SAFI_clean.csv` file, we will insert a chunk and
-call it 'setup'. Since we don't want this code or the output to show in our
-knitted HTML document, we add an `#| include: false` option after the curly braces.
-
-```{{r}}
-#|label: setup
-#|include: false
-
-library(tidyverse)
-library(here)
-interviews <- read_csv(here("data/SAFI_clean.csv"), na = "NULL")
-```
-
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Important Note!
-
-The file paths you give in a .qmd document, e.g. to load a .csv file, are
-relative to the .qmd document, **not** the project root.
-
-As suggested in the Starting with Data episode, we highly recommend the use of
-the `here()` function to keep the file paths consistent within your project.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
