@@ -25,6 +25,9 @@
     <loc>https://datacarpentry.org/r-socialsci/07-json.html</loc>
   </url>
   <url>
+    <loc>https://datacarpentry.org/r-socialsci/08-quarto.html</loc>
+  </url>
+  <url>
     <loc>https://datacarpentry.org/r-socialsci/404.html</loc>
   </url>
   <url>
@@ -35,6 +38,12 @@
   </url>
   <url>
     <loc>https://datacarpentry.org/r-socialsci/R-handout.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.org/r-socialsci/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.org/r-socialsci/images.html</loc>
   </url>
   <url>
     <loc>https://datacarpentry.org/r-socialsci/index.html</loc>
@@ -64,6 +73,9 @@
     <loc>https://datacarpentry.org/r-socialsci/instructor/07-json.html</loc>
   </url>
   <url>
+    <loc>https://datacarpentry.org/r-socialsci/instructor/08-quarto.html</loc>
+  </url>
+  <url>
     <loc>https://datacarpentry.org/r-socialsci/instructor/404.html</loc>
   </url>
   <url>
@@ -76,13 +88,31 @@
     <loc>https://datacarpentry.org/r-socialsci/instructor/R-handout.html</loc>
   </url>
   <url>
+    <loc>https://datacarpentry.org/r-socialsci/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.org/r-socialsci/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://datacarpentry.org/r-socialsci/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.org/r-socialsci/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.org/r-socialsci/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://datacarpentry.org/r-socialsci/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://datacarpentry.org/r-socialsci/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.org/r-socialsci/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.org/r-socialsci/key-points.html</loc>
   </url>
   <url>
     <loc>https://datacarpentry.org/r-socialsci/profiles.html</loc>
