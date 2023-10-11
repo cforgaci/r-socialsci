@@ -214,7 +214,7 @@ The syntax of a code chunk is:
 
 ````markdown
 ```{r chunk-name}
-"Here is where you place the R code that you want to run."
+Here is where you place the R code that you want to run.
 ```
 ````
 
