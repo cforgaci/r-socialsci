@@ -220,12 +220,12 @@ and <kbd>Cmd</kbd>\+<kbd>Option</kbd>\+<kbd>I</kbd> on Mac.
 
 The syntax of a code chunk is:
 
+````{verbatim, lang = "markdown"}
 ```{r}
-#| echo: fenced
 #| label: chunk-name
-
 # Here is where you place the R code that you want to run.
 ```
+````
 
 A Quarto document knows that this text is not part of the report from the
 ```` ``` ```` that begins and ends the chunk. It also knows that the code
@@ -246,16 +246,15 @@ To load **tidyverse** and our `SAFI_clean.csv` file, we will insert a chunk and
 call it 'setup'. Since we don't want this code or the output to show in our
 rendered HTML document, we add an `#| include: false` option after the curly braces.
 
+````{verbatim, lang = "markdown"}
 ```{r}
 #| label: setup
 #| include: false
-#| echo: fenced
-
 library(tidyverse)
 library(here)
 interviews <- read_csv(here("data/SAFI_clean.csv"), na = "NULL")
 ```
-
+````
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -305,11 +304,10 @@ When you are generating a table in quarto the label should be prefixed with `tbl
 e.g. `tbl-interviews`.
 You can add a caption to the chunk options with `tbl-cap: "Your caption here"`.
 
-```{r purl=FALSE}
+````{verbatim, lang = "markdown"}
+```{r}
 #| label: tbl-interviews
 #| tbl-cap: "A useful description about the table."
-#| eval: false
-#| echo: true
 interviews %>%
     filter(!is.na(memb_assoc)) %>%
     group_by(village, memb_assoc) %>%
@@ -317,6 +315,7 @@ interviews %>%
   knitr::kable(col.names = c("Village", "Member Association", 
                              "Mean Number of Members"))
 ```
+````
 
 ```{r}
 #| label: tbl-interview-out
@@ -491,10 +490,21 @@ If you are feeling adventurous, you can also create a new plot with the
 
 ## Solution to Exercise
 
+````{verbatim, lang = "markdown"}
 ```{r}
 #| label: fig-fancy-plot
 #| answer: true
 #| purl: false
+interviews_plotting %>%
+  ggplot(aes(x = respondent_wall_type)) +
+  geom_bar(aes(fill = village))
+```
+````
+
+```{r}
+#| label: fig-fancy-plot
+#| answer: true
+#| echo: false
 interviews_plotting %>%
   ggplot(aes(x = respondent_wall_type)) +
   geom_bar(aes(fill = village))
@@ -507,11 +517,11 @@ interviews_plotting %>%
 We can also create a caption with the chunk option `fig-cap: "Caption here"`,
 and add some nicer labels using the `labs()` function.
 
+````{verbatim, lang = "markdown"}
 ```{r}
 #| label: fig-chunk-name
 #| fig-cap: "I made this plot while attending an awesome Data Carpentries workshop where I learned a ton of cool stuff!"
-#| echo: true
-#| eval: false
+#| echo: false
 
 interviews_plotting %>%
   ggplot(aes(x = respondent_wall_type)) +
@@ -519,8 +529,7 @@ interviews_plotting %>%
   labs(x = "Type of Wall in Home", y = "Count", fill = "Village Name") +
   scale_fill_viridis_d() # add colour deficient friendly palette
 ```
-
-...or, ideally, something more informative.
+````
 
 ```{r}
 #| label: fig-captioned-plot
@@ -534,6 +543,8 @@ interviews_plotting %>%
   labs(x = "Type of Wall in Home", y = "Count", fill = "Village Name") +
   scale_fill_viridis_d() # add colour deficient friendly palette
 ```
+
+...or, ideally, something more informative.
 
 Now, you may have been wondering why I insisted that you prefix the labels of
 your tables in figures, but there is a useful reason for this! It allows you to
