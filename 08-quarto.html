@@ -32,7 +32,7 @@
     </div>
   </div>
   <hr></header><nav class="navbar navbar-expand-xl navbar-light bg-white bottom-nav data" aria-label="Main Navigation"><div class="container-fluid nav-container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="menu-title">Menu</span>
     </button>
@@ -43,7 +43,7 @@
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
-      <i role="img" aria-label="search button" data-feather="search"></i>
+        <i role="img" aria-label="Search the All In One page" data-feather="search"></i>
       -->
     </div>
     <div class="desktop-nav">
@@ -68,11 +68,17 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html"></a></li><li><a class="dropdown-item" href="R-handout.html">Code Handout - R for Social Scientists</a></li>
           </ul></li>
       </ul></div>
+    <!--
     <form class="d-flex col-md-2 search-form">
-      <fieldset disabled><input class="form-control me-2 searchbox" type="search" placeholder="Search" aria-label="Search"><button class="btn btn-outline-success tablet-search-button" type="submit">
-          <i class="search-icon" data-feather="search" role="img" aria-label="search button"></i>
+      <fieldset disabled>
+      <input class="form-control me-2 searchbox" type="search" placeholder="" aria-label="">
+        <button class="btn btn-outline-success tablet-search-button"  type="submit">
+          <i class="search-icon" data-feather="search" role="img" aria-label="Search the All In One page"></i>
         </button>
-      </fieldset></form>
+      </fieldset>
+    </form>
+    -->
+    <a class="btn btn-primary" href="aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><div class="col-md-12 mobile-title">
   R for Social Scientists
@@ -90,7 +96,7 @@
         <!-- START: inst/pkgdown/templates/navbar.html -->
 <div id="sidebar-col" class="col-lg-4">
   <div id="sidebar" class="sidebar">
-      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="close menu" alt="close menu" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle">
+      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="close menu" alt="close menu" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle" data-collapse="Collapse " data-episodes="Episodes ">
           <i class="search-icon" data-feather="x" role="img"></i>
         </button>
         <div class="sidebar-inner">
@@ -296,14 +302,14 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Getting started with Quarto (Optional)</h1>
-        <p> Last updated on 2023-10-11 | 
+        <p>Last updated on 2024-05-13 |
         
         <a href="https://github.com/datacarpentry/r-socialsci/edit/main/episodes/08-quarto.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
         
         
         <div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
 
         
@@ -492,10 +498,12 @@ by using the keyboard shortcuts
 <kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> on Mac.</p>
 <p>The syntax of a code chunk is:</p>
 <div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Here is where you place the R code that you want to run.</span></span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="in">#| label: chunk-name</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="in"># Here is where you place the R code that you want to run.</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="in">```</span></span></code></pre>
 </div>
 <p>A Quarto document knows that this text is not part of the report from
 the <code>```</code> that begins and ends the chunk. It also knows that
@@ -510,7 +518,18 @@ alphanumeric characters and <code>-</code>.</p>
 ‘setup’. Since we don’t want this code or the output to show in our
 rendered HTML document, we add an <code>#| include: false</code> option
 after the curly braces.</p>
-<div id="important-note" class="callout callout">
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="in">#| label: setup</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="in">#| include: false</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="in">library(here)</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="in">interviews &lt;- read_csv(here("data/SAFI_clean.csv"), na = "NULL")</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="in">```</span></span></code></pre>
+</div>
+<div id="important-note" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -547,7 +566,7 @@ the output of your R code and renders it into a nice looking HTML table.
 You can also specify different aspects of the table, e.g. the column
 names, a caption, etc.</p>
 <p>Run the code chunk to make sure you get the desired output.</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -589,16 +608,19 @@ names, a caption, etc.</p>
 prefixed with <code>tbl-</code>, e.g. <code>tbl-interviews</code>. You
 can add a caption to the chunk options with
 <code>tbl-cap: "Your caption here"</code>.</p>
-<div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">interviews</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">filter</span><span class="op">(</span><span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">memb_assoc</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">village</span>, <span class="va">memb_assoc</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">summarize</span><span class="op">(</span>mean_no_membrs <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">no_membrs</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu">kable</span><span class="op">(</span>col.names <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"Village"</span>, <span class="st">"Member Association"</span>, </span>
-<span>                             <span class="st">"Mean Number of Members"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="in">#| label: tbl-interviews</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="in">#| tbl-cap: "A useful description about the table."</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="in">interviews %&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="in">    filter(!is.na(memb_assoc)) %&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="in">    group_by(village, memb_assoc) %&gt;%</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="in">    summarize(mean_no_membrs = mean(no_membrs)) %&gt;%</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="in">  knitr::kable(col.names = c("Village", "Member Association", </span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="in">                             "Mean Number of Members"))</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="in">```</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -675,7 +697,7 @@ messages produced by your code.</td>
 </td>
 <td>Where the figure from your R code chunk should be output on the
 page</td>
-</tr></tbody></table><div id="tip" class="callout callout">
+</tr></tbody></table><div id="tip" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -719,11 +741,9 @@ to the output.</p>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Solution to Exercise
-  </h4>
+  <h4 class="accordion-header" id="headingSolution1">Solution to Exercise</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Create a chunk with <code>eval: false, echo: false</code>, then
 create another chunk with <code>include: false</code> to compare.
@@ -746,14 +766,14 @@ chunk is the number of backticks. In-line R code uses one backtick
 (<code>r</code>), whereas code chunks use three backticks
 (<code>r</code>).</p>
 <p>For example, today’s date is <code>`r Sys.Date()`</code>, will be
-rendered as: today’s date is 2023-10-11.<br>
+rendered as: today’s date is 2024-05-13.<br>
 The code will display today’s date in the output document (well,
 technically the date the document was last rendered).</p>
 <p>The best way to use in-line R code, is to minimise the amount of code
 you need to produce the in-line output by preparing the output in code
 chunks. Let’s say we’re interested in presenting the average household
 size in a village.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -782,7 +802,7 @@ more colourful and a little less boring. We will use the
 <code>interview_plotting</code> data from the previous episode.</p>
 <p>If you were unable to complete the previous lesson or did not save
 the data, then you can create it in a new code chunk.</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -827,19 +847,21 @@ the <code>interviews_plotting</code> data frame.</p>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Solution to Exercise
-  </h4>
+  <h4 class="accordion-header" id="headingSolution2">Solution to Exercise</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb16">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">interviews_plotting</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">respondent_wall_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">village</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="in">#| label: fig-fancy-plot</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="in">#| answer: true</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="in">#| purl: false</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="in">interviews_plotting %&gt;%</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a><span class="in">  ggplot(aes(x = respondent_wall_type)) +</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="in">  geom_bar(aes(fill = village))</span></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a><span class="in">```</span></span></code></pre>
 </div>
 <figure><img src="fig/08-quarto-rendered-fig-fancy-plot-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -848,21 +870,26 @@ the <code>interviews_plotting</code> data frame.</p>
 <p>We can also create a caption with the chunk option
 <code>fig-cap: "Caption here"</code>, and add some nicer labels using
 the <code>labs()</code> function.</p>
-<div class="codewrapper sourceCode" id="cb17">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">interviews_plotting</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">respondent_wall_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">village</span><span class="op">)</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Type of Wall in Home"</span>, y <span class="op">=</span> <span class="st">"Count"</span>, fill <span class="op">=</span> <span class="st">"Village Name"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_fill_viridis_d</span><span class="op">(</span><span class="op">)</span> <span class="co"># add colour deficient friendly palette</span></span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="in">#| label: fig-chunk-name</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="in">#| fig-cap: "I made this plot while attending an awesome Data Carpentries workshop where I learned a ton of cool stuff!"</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="in">#| echo: false</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="in">interviews_plotting %&gt;%</span></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="in">  ggplot(aes(x = respondent_wall_type)) +</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a><span class="in">  geom_bar(aes(fill = village), position = "dodge") + </span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a><span class="in">  labs(x = "Type of Wall in Home", y = "Count", fill = "Village Name") +</span></span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a><span class="in">  scale_fill_viridis_d() # add colour deficient friendly palette</span></span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a><span class="in">```</span></span></code></pre>
 </div>
-<p>…or, ideally, something more informative.</p>
 <figure style="text-align: center"><img src="fig/08-quarto-rendered-fig-captioned-plot-1.png" alt="I made this plot while attending an awesome Data Carpentries workshop where I learned a ton of cool stuff!" class="figure mx-auto d-block"><figcaption>
 I made this plot while attending an awesome Data Carpentries workshop
 where I learned a ton of cool stuff!
-</figcaption></figure><p>Now, you may have been wondering why I insisted that you prefix the
+</figcaption></figure><p>…or, ideally, something more informative.</p>
+<p>Now, you may have been wondering why I insisted that you prefix the
 labels of your tables in figures, but there is a useful reason for this!
 It allows you to cross-reference them in the text of your document, and
 it requires that the label is unique, and that they have the correct
@@ -884,7 +911,7 @@ file to indicate the desired output format.</p>
 <pre><code>---
 format: word
 ---</code></pre>
-<div id="note-creating-pdf-documents" class="callout callout">
+<div id="note-creating-pdf-documents" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -904,7 +931,7 @@ website</a> for more information.</p>
 </div>
 </div>
 </div>
-<div id="note-inserting-citations-into-a-quarto-file" class="callout callout">
+<div id="note-inserting-citations-into-a-quarto-file" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -949,7 +976,7 @@ predecessor of Quarto</li>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
 <ul><li>Quarto is useful for creating reproducible documents combining text
@@ -980,13 +1007,13 @@ document</li>
 
       </div><!--/div.row-->
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
-				<p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
+        <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
         
         <a href="https://github.com/datacarpentry/r-socialsci/edit/main/episodes/08-quarto.Rmd" class="external-link">Edit on GitHub</a>
         
 	
-        | <a href="https://github.com/datacarpentry/r-socialsci/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> 
+        | <a href="https://github.com/datacarpentry/r-socialsci/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/datacarpentry/r-socialsci/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/datacarpentry/r-socialsci/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
@@ -994,15 +1021,13 @@ document</li>
         
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
-        <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.14.0" class="external-link">sandpaper (0.14.0)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.7.1" class="external-link">pegboard (0.7.1)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.3.1" class="external-link">varnish (0.3.1)</a>.</p>
+        <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.4" class="external-link">sandpaper (0.16.4)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.5" class="external-link">pegboard (0.7.5)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.2" class="external-link">varnish (1.0.2)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
 		<a href="#top">
-			<i class="search-icon" data-feather="arrow-up" role="img" aria-label="Back to top"></i><br><span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Back</span> To Top
+      <i class="search-icon" data-feather="arrow-up" role="img" aria-label="Back To Top"></i><br><!-- <span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Back</span> To Top --><span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Back</span> To Top
 		</a>
 	</div>
   <script type="application/ld+json">
@@ -1010,6 +1035,7 @@ document</li>
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
   "@id": "https://datacarpentry.org/r-socialsci/08-quarto.html",
+  "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
@@ -1018,8 +1044,8 @@ document</li>
   "url": "https://datacarpentry.org/r-socialsci/08-quarto.html",
   "identifier": "https://datacarpentry.org/r-socialsci/08-quarto.html",
   "dateCreated": "2017-05-25",
-  "dateModified": "2023-10-11",
-  "datePublished": "2023-10-11"
+  "dateModified": "2024-05-13",
+  "datePublished": "2024-05-13"
 }
 
   </script><script>
